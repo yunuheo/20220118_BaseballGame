@@ -13,7 +13,7 @@ public class MainDrive {
 		int gameCount = 1; // 몇번만에 맞췄는지 계산.
 		
 //		3S라이크가 될때까지 무한반복
-		while(true) {
+//		while(true) {
 //		길이가 3인 배열을 만들자. 
 		int[] challNumArr = new int[3]; 
 		
@@ -49,11 +49,25 @@ public class MainDrive {
 		System.out.println();
 //		Scanner로 세자리 정수를 입력받자. ( 147 => [1,4,7]형태로 분리해서 저장 )
 		
+
+		
+		
+		
+		while(true) {
+			
+		
 		int[] inputNumArr = new int[3];
 		
-		
+		while (true) {			
+					
 		System.out.print("세자리 정수를 입력하시오. : ");
 		int inputNum = myScanner.nextInt();
+		
+		boolean DuplOk = true;
+		
+			
+			
+		
 		
 //		입력된 숫자를 배열에 담자
 		
@@ -64,7 +78,16 @@ public class MainDrive {
 			inputNumArr[1] = (inputNum/10)%10; 
 			inputNumArr[2] = inputNum % 10;
 			
-		
+			for (int i = 0; i < inputNumArr.length-2; i++){
+				if (inputNumArr[i] == inputNumArr[i+1] || inputNumArr [i] == inputNumArr[i+2] || inputNumArr[i+1] == inputNumArr[i+2]) {
+					DuplOk = false;
+					break;
+				}
+			}
+			
+			
+			
+		if(DuplOk) {
 		System.out.print("입력한 숫자: ");
 		for ( int inputNums : inputNumArr) {
 			
@@ -72,6 +95,14 @@ public class MainDrive {
 		}
 		
 		System.out.println();
+		break;
+		
+		}
+		
+		else {
+			System.out.println("중복된 숫자는 입력할 수 없습니다.");
+			}
+		}
 		
 		
 //		두 배열을 비교해서, ?S ?B을 판정해서 출력하자.
@@ -110,6 +141,11 @@ public class MainDrive {
 		
 		System.out.println(ballCount+"볼 "+strikeCount+"스트라이크!");	
 		System.out.println("========================="); //구분선 입력
+		
+		for (int challNum : challNumArr) {
+			System.out.print(challNum);
+		}
+		System.out.println();
 		}
 
 		

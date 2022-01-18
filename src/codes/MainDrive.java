@@ -65,7 +65,7 @@ public class MainDrive {
 		
 		boolean DuplOk = true;
 		
-			
+		boolean isRangeOk = (100 <= inputNum) && (inputNum <= 999);
 			
 		
 		
@@ -87,7 +87,7 @@ public class MainDrive {
 			
 			
 			
-		if(DuplOk) {
+		if(DuplOk&&isRangeOk) {
 		System.out.print("입력한 숫자: ");
 		for ( int inputNums : inputNumArr) {
 			
@@ -98,10 +98,14 @@ public class MainDrive {
 		break;
 		
 		}
+		else if(!isRangeOk) {
+			System.out.println("세자리의 정수를 입력하세요");
+		}
 		
-		else {
+		else  {
 			System.out.println("중복된 숫자는 입력할 수 없습니다.");
 			}
+		
 		}
 		
 		

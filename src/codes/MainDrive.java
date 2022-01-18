@@ -1,5 +1,7 @@
 package codes;
 
+import java.util.Scanner;
+
 public class MainDrive {
 
 	public static void main(String[] args) {
@@ -39,7 +41,28 @@ public class MainDrive {
 			System.out.println(challNum);
 		}
 		
+//		Scanner로 세자리 정수를 입력받자. ( 147 => [1,4,7]형태로 분리해서 저장 )
 		
+		int[] inputNumArr = new int[3];
+		
+		Scanner myScanner = new Scanner(System.in);
+		System.out.print("세자리 정수를 입력하시오. : ");
+		int inputNum = myScanner.nextInt();
+		
+//		입력된 숫자를 배열에 담자
+		
+		
+//			inputNum의 각 자리수를 분리하여 배열에 저장해야함.
+
+			inputNumArr[0] = inputNum/100;
+			inputNumArr[1] = (inputNum/10)%10; 
+			inputNumArr[2] = inputNum % 10;
+			
+		
+		
+		for (int N : inputNumArr) {
+			System.out.println(N);
+		}
 		
 		
 

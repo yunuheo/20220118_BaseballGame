@@ -38,9 +38,9 @@ public class MainDrive {
 		
 //	    랜덤으로 1~9 사이의 정수 3개를 반환 (중복되는 수 없음)
 		for (int challNum : challNumArr) {
-			System.out.println(challNum);
+			System.out.print(challNum);
 		}
-		
+		System.out.println();
 //		Scanner로 세자리 정수를 입력받자. ( 147 => [1,4,7]형태로 분리해서 저장 )
 		
 		int[] inputNumArr = new int[3];
@@ -59,11 +59,48 @@ public class MainDrive {
 			inputNumArr[2] = inputNum % 10;
 			
 		
-		
-		for (int N : inputNumArr) {
-			System.out.println(N);
+		System.out.print("입력한 숫자: ");
+		for ( int inputNums : inputNumArr) {
+			
+		System.out.print(inputNums);
 		}
 		
+		System.out.println();
+		
+//		두 배열을 비교해서, ?S ?B을 판정해서 출력하자.
+		
+//		숫자도 맞고, 위치도 맞다 => S판정.  
+//		숫자는 맞는데, 위치가 다르다 => B판정.
+//		판정 결과가 3S로 판정될때까지 반복 
+		
+
+
+		int ballCount = 0;	
+
+		
+		int strikeCount = 0;
+		
+		for (int i = 0; i < challNumArr.length; i++) {
+			for (int j = 0; j < inputNumArr.length; j++) {
+				if (challNumArr[i] == inputNumArr[j]) {  //두 배열에 동일한 숫자가 존재. 
+					if (i==j) {  //동일한 숫자가 있으면서 자릿수 까지 같은가요? => strike판정
+						strikeCount++;
+					}
+					else {
+						ballCount++;
+					}
+				}
+			}
+		}
+				
+		
+				
+				
+
+		
+		
+		System.out.println(ballCount+"볼 "+strikeCount+"스트라이크!");
+
 		
 
 	}

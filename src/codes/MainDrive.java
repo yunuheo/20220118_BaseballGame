@@ -7,7 +7,13 @@ public class MainDrive {
 	public static void main(String[] args) {
 		
 //		컴퓨터가 랜덤으로 3자리 숫자를 문제로 출제. (랜덤메써드)
+
+		Scanner myScanner = new Scanner(System.in); // 메모리 낭비를 줄이기 위해 스캐너를 반복문 밖에다가 위치.
 		
+		int gameCount = 1; // 몇번만에 맞췄는지 계산.
+		
+//		3S라이크가 될때까지 무한반복
+		while(true) {
 //		길이가 3인 배열을 만들자. 
 		int[] challNumArr = new int[3]; 
 		
@@ -45,7 +51,7 @@ public class MainDrive {
 		
 		int[] inputNumArr = new int[3];
 		
-		Scanner myScanner = new Scanner(System.in);
+		
 		System.out.print("세자리 정수를 입력하시오. : ");
 		int inputNum = myScanner.nextInt();
 		
@@ -66,6 +72,7 @@ public class MainDrive {
 		}
 		
 		System.out.println();
+		
 		
 //		두 배열을 비교해서, ?S ?B을 판정해서 출력하자.
 		
@@ -94,13 +101,26 @@ public class MainDrive {
 		}
 				
 		
-				
-				
+		if(strikeCount == 3) {
+			System.out.println("축하합니다.정답입니다! "+gameCount+"번만에 정답을 맞추셨습니다."); 
+			break;
+		}
+		
+		gameCount++;
+		
+		System.out.println(ballCount+"볼 "+strikeCount+"스트라이크!");	
+		System.out.println("========================="); //구분선 입력
+		}
 
 		
 		
-		System.out.println(ballCount+"볼 "+strikeCount+"스트라이크!");
+		
 
+		
+
+		
+		
+		
 		
 
 	}
